@@ -12,10 +12,10 @@
             <a-marker preset="hiro">
                 <a-assets>
                     <a-asset-item id="model-obj" src="./model.obj"></a-asset-item>
-                    <a-asset-item id="model-mtl" src="./model_material.mtl"></a-asset-item>
+                    <a-asset-item id="model-mtl" src="./model.mtl"></a-asset-item>
                   </a-assets>
                 
-                <a-entity obj-model="obj: #model-obj; mtl: #model-mtl"></a-entity>
+                <a-obj-model src="#model-obj" mtl="#model-mtl"></a-obj-model>
                 <a-sphere position="0 0 0" radius="1.6" color="#EF2D5E"></a-sphere>
             </a-marker>
         <a-entity camera></a-entity>
