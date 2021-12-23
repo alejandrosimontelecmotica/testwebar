@@ -16,29 +16,25 @@
             <a-assets>
                 <a-asset-item id="pallet" src="scene.gltf"></a-asset-item>
                 <img id="logo_img" src="logo_telecmotica.png">
-                <video id="video" autoplay loop="true" src="video.mp4"></video>
             </a-assets>
             
             <a-marker preset="custom" type="pattern" url="custom.patt">
 
                 <a-entity gltf-model="#pallet" 
-                position="0 0 0"
+                position="0 0 0.5"
                 scale="0.5 0.5 0.5">
                 </a-entity>
 
                 <a-image 
                 position="0 3 0"
+                scale="1 1 2"
                 animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
                 src="#logo_img">
                 </a-image>
                 
-                <a-video src="#video" width="2" height="1" position="-2 0 0">
-                </a-video>
-
             </a-marker>
 
             <a-entity camera>
-                
             </a-entity>
 
         </a-scene>
