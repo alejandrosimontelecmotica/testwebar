@@ -73,23 +73,6 @@
                 }
             });
 
-            AFRAME.registerComponent("rotationcomp", {
-                tick: function () {
-                    var model = document.querySelector("#pallet");
-                    model.setAttribute("rotation",{x:0,y:0,z:0});
-            
-                }
-            });
-
-    /*        AFRAME.registerComponent("move", {
-                tick: function() {
-                    let obj3d = document.querySelector("#marker");
-                     console.log("ENCONTRADO MARKER TRACKING" + obj3d);
-                    this.el.object3D.setRotationFromQuaternion(obj3d.object3D.quaternion);
-                    this.el.object3D.position.set(obj3d.object3D.position.x, obj3d.object3D.position.y, obj3d.object3D.position.z);
-                }
-            });*/
-
             function displayEntity(e_id,m_id) {
 
                 
@@ -139,29 +122,26 @@
                 <a-asset-item id="3dmodel" src="scene2.gltf"></a-asset-item>
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
-            <a-marker markercomps 
+            <a-marker 
             markerhandler emitevents="true"
             id="marker" 
             preset="custom" type="pattern" url="custom.patt">
             
-
                 <a-entity gltf-model="#3dmodel" id="pallet" look-controls 
                 scale="0.1 0.1 0.1"
-                visible="true"
-                static-body
-                constraint="target: #pivot;">
+                visible="true">
                 </a-entity>
                 <a-image id="logo"
                 position="0 3 0"
                 scale="1 1 2"
                 animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
-                look-at="#marker"
+                look-at="#cameraSRC"
                 src="#logo_img">
                 </a-image>
                  
             </a-marker>
         
-            <a-entity camera smooth="true" camera="far:100000; near:0.01"></a-entity>
+            <a-entity camera id="cameraSRC" smooth="true" camera="far:100000; near:0.01"></a-entity>
         
         </a-scene>
 
