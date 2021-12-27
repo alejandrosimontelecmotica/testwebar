@@ -14,7 +14,7 @@
         <script>
             AFRAME.registerComponent("listener", {
         init: function() {
-            this.target = document.querySelector('#marker'); // your video
+            this.target = document.querySelector('#pallet'); // your video
             this.prevPosition = null; // initially there is no position or rotation
             this.prevRotation = null;
         },
@@ -139,36 +139,36 @@
                 <a-asset-item id="3dmodel" src="scene.gltf"></a-asset-item>
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
-
-            <a-plane position= "0 0 0" static-body id="pivot" rotation="90 0 0 "></a-plane>
-            <a-entity gltf-model="#3dmodel" id="pallet" look-controls listener
-            scale="0.1 0.1 0.1"
-            visible="true"
-            static-body
-            constraint="target: #pivot;"
-            
-            >
-            </a-entity>
-            <a-image id="logo"
-            position="0 3 0"
-            scale="1 1 2"
-            animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
-            look-at="#marker"
-            src="#logo_img">
-            </a-image>
-            
-            <a-marker-camera markercomps smooth="true"
+            <a-marker markercomps 
             markerhandler emitevents="true"
-            id="marker" camera="far:100000; near:0.01"
+            id="marker" 
             preset="custom" type="pattern" url="custom.patt">
-
+            
+            
+            
+                        <a-plane position= "0 0 0" static-body id="pivot" rotation="90 0 0 "></a-plane>
+                        <a-entity gltf-model="#3dmodel" id="pallet" look-controls listener
+                        scale="0.1 0.1 0.1"
+                        visible="true"
+                        static-body
+                        constraint="target: #pivot;"
+                        
+                        >
+                        </a-entity>
+                        <a-image id="logo"
+                        position="0 3 0"
+                        scale="1 1 2"
+                        animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
+                        look-at="#marker"
+                        src="#logo_img">
+                        </a-image>
                         
             
             
 
-        </a-marker>
+            </a-marker>
         
-       
+            <a-entity camera smooth="true" camera="far:100000; near:0.01"></a-entity>
         
         </a-scene>
 
