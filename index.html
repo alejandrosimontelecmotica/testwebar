@@ -105,14 +105,15 @@
                 <a-asset-item id="3dmodel" src="scene2.gltf"></a-asset-item>
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
-            
+
             <a-marker smooth="true" smoothCount="10"
             markerhandler emitevents="true"
             id="marker" 
             preset="custom" type="pattern" url="custom.patt">
             
-                <a-entity gltf-model="#3dmodel" id="pallet" look-controls
+                <a-entity gltf-model="#3dmodel" id="pallet"
                 scale="0.1 0.1 0.1"
+                rotation="90 0 0"
                 visible="true">
                 </a-entity>
 
