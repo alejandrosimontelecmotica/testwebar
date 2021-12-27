@@ -32,6 +32,14 @@
                 }
             });
 
+            AFRAME.registerComponent("rotationcomp", {
+                tick: function () {
+                    var model = document.querySelector("#pallet");
+                    model.setAttribute("rotation",{x:0,y:0,z:0});
+            
+                }
+            });
+
     /*        AFRAME.registerComponent("move", {
                 tick: function() {
                     let obj3d = document.querySelector("#marker");
@@ -91,19 +99,11 @@
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
 
-            
-            <a-marker-camera markercomps
-            markerhandler emitevents="true"
-            id="marker" camera="far:100000; near:0.01"
-            preset="custom" type="pattern" url="custom.patt">
-
-                        
-            
-            
-            <a-entity gltf-model="#3dmodel" id="pallet"
+            <a-entity gltf-model="#3dmodel" id="pallet" look-controls rotationcomp
             scale="0.1 0.1 0.1"
             visible="true"
             dynamic-body
+            constraint="target: #marker;"
             >
                 <a-image id="logo"
                 position="0 3 0"
@@ -113,6 +113,15 @@
                 </a-image>
             </a-entity>
             
+            <a-marker-camera markercomps 
+            markerhandler emitevents="true"
+            id="marker" camera="far:100000; near:0.01"
+            preset="custom" type="pattern" url="custom.patt">
+
+                        
+            
+            
+
         </a-marker>
         
        
