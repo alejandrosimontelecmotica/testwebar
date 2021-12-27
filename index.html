@@ -90,23 +90,22 @@
             </a-assets>
             
             
-            <a-entity gltf-model="#3dmodel" id="pallet"
-            scale="0.1 0.1 0.1"
-            rotation="90,0,0"
-            visible="false">
-                <a-image id="logo"
-                position="0 3 0"
-                scale="1 1 2"
-                animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
-                src="#logo_img">
-                </a-image>
-            </a-entity>
-        
-        
-        <a-marker-camera markercomp
-        markerhandler emitevents="true"
-        id="marker" 
-        preset="custom" type="pattern" url="custom.patt">
+            
+            
+            <a-marker-camera 
+            markerhandler emitevents="true"
+            id="marker" 
+            preset="custom" type="pattern" url="custom.patt">
+                <a-entity gltf-model="#3dmodel" id="pallet"
+                scale="0.1 0.1 0.1"
+                visible="true">
+                    <a-image id="logo"
+                    position="0 3 0"
+                    scale="1 1 2"
+                    animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
+                    src="#logo_img">
+                    </a-image>
+                </a-entity>
         </a-marker>
         
        
