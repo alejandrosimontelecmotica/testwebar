@@ -10,17 +10,29 @@
   </head>
 
   <body style="margin: 0; overflow: hidden;">
+
+    
     <a-scene
-      vr-mode-ui="enabled: false"
-      embedded
-      arjs="sourceType: webcam; debugUIEnabled: false;"
+    vr-mode-ui="enabled: false"
+    embedded
+    arjs="sourceType: webcam; debugUIEnabled: false;"
     >
-      <a-text
-        value="This content will always face you."
+        <a-assets>
+            <a-asset-item id="3dmodel" src="scene.gltf"></a-asset-item>
+            <img id="logo_img" src="logo_telecmotica.png">
+        </a-assets>
+        <a-entity gltf-model="#3dmodel" id="pallet"
         look-at="[gps-camera]"
-        scale="50 50 50"
         gps-entity-place="latitude: 39.38573800872381; longitude:-0.40771342889247897;"
-      ></a-text>
+        visible="true">
+            <a-image id="logo"
+            position="0 3 0"
+            scale="1 1 2"
+            animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
+            src="#logo_img">
+            </a-image>
+        </a-entity>
+
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
