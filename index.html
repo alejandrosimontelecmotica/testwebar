@@ -98,12 +98,14 @@
         
         <a-scene embedded arjs="debugUIEnabled: false" 
         renderer="logarithmicDepthBuffer: true;"
-        trackingMethod= "best" vr-mode-ui="enabled: false">        
+        trackingMethod= "best" vr-mode-ui="enabled: false"
+        arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;">        
             
             <a-assets>
                 <a-asset-item id="3dmodel" src="scene2.gltf"></a-asset-item>
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
+            
             <a-marker smooth="true" smoothCount="10"
             markerhandler emitevents="true"
             id="marker" 
