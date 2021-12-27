@@ -30,6 +30,15 @@
                 }
             });
 
+            AFRAME.registerComponent("move", {
+                tick: function() {
+                    let obj3d = document.querySelector("#marker");
+                     console.log("ENCONTRADO MARKER TRACKING" + obj3d);
+                    this.el.object3D.setRotationFromQuaternion(obj3d.object3D.quaternion);
+                    this.el.object3D.position.set(obj3d.object3D.position.x, obj3d.object3D.position.y, obj3d.object3D.position.z);
+                }
+            });
+
             function displayEntity(e_id,m_id) {
 
                 console.log("AYAYAYAYYA");
@@ -68,7 +77,8 @@
             <a-entity gltf-model="#3dmodel" id="pallet"
             scale="0.1 0.1 0.1"
             rotation="90,0,0"
-            visible="false">
+            visible="false"
+            move>
                 <a-image id="logo"
                 position="0 3 0"
                 scale="1 1 2"
