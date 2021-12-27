@@ -7,6 +7,11 @@
         <!-- script de AR.JS con soporte de marker + location -->
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
        
+        <script src="https://unpkg.com/aframe-frustum-lock-component"></script>
+        <script>
+          aframeFrustumLockComponent(window.AFRAME);
+        </script>
+
         <script>
             var detectedQR = false;
             var lastPosition;
@@ -99,21 +104,24 @@
                 <img id="logo_img" src="logo_telecmotica.png">
             </a-assets>
 
+            <a-plane position= "0 0 0" static-body id="pivot" rotation="90 0 0 "></a-plane>
             <a-entity gltf-model="#3dmodel" id="pallet" look-controls rotationcomp
             scale="0.1 0.1 0.1"
             visible="true"
-            dynamic-body
-            constraint="target: #marker;"
-            >
-                <a-image id="logo"
-                position="0 3 0"
-                scale="1 1 2"
-                animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
-                src="#logo_img">
-                </a-image>
-            </a-entity>
+            static-body
+            constraint="target: #pivot;"
             
-            <a-marker-camera markercomps 
+            >
+            </a-entity>
+            <a-image id="logo"
+            position="0 3 0"
+            scale="1 1 2"
+            animation="property: rotation; dur: 15000; to: 0 360 0; loop: true"
+            look-at="#marker"
+            src="#logo_img">
+            </a-image>
+            
+            <a-marker-camera markercomps frustum-lock static-body
             markerhandler emitevents="true"
             id="marker" camera="far:100000; near:0.01"
             preset="custom" type="pattern" url="custom.patt">
