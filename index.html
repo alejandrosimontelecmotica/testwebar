@@ -5,6 +5,8 @@
         <!--Added AFrame and AR.JS libraries-->
         <!-- A-Frane version 1.2.0 -->
         <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+        <!-- A-Frame Extra, Add-ons and helpers -->
+        <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
         <!-- AR.JS marker and location support -->
         <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
         
@@ -51,11 +53,12 @@
 
             
                 <!-- 3D MODELS-->
-                <a-entity gltf-model="#3dmodel" id="pallet"
+                <a-entity gltf-model="#3dmodel" id="pallet" 
                 scale="1 1 1"
                 rotation="0 0 0"
                 position="0 0 0"
-                visible="true">
+                visible="true"
+                animation-mixer>
                 </a-entity>
 
                 <!-- IMAGES -->
