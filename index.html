@@ -19,7 +19,7 @@
         <!-- SCENE -->
         <!-- Modified scene settings to solve 'flickering' and 'shaking' problems.
             Enabled deepth buffer and changed camera resolution.-->
-        <a-scene embedded arjs="debugUIEnabled: true" 
+        <a-scene embedded arjs="debugUIEnabled: false" 
         renderer="logarithmicDepthBuffer: true;"
         trackingMethod= "best" vr-mode-ui="enabled: false"
         arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;">        
@@ -74,13 +74,13 @@
                 
                 <a-entity id="parent_rollup" position = " 0 0 0" rotation = " -90 0 0">
                     <a-image id="rollup1"
-                    rotation="0 0 0"
+                    rotation="0 10 0"
                     position="1 0 0"
                     scale="1 2 1"
                     src="#rollup1_img">
                     </a-image>
                     <a-image id="rollup2"
-                    rotation="0 0 0"
+                    rotation="0 10 0"
                     position="-1 0 0"
                     scale="1 2 1"
                     src="#rollup2_img">
