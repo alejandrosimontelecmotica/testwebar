@@ -27,7 +27,10 @@
             Enabled deepth buffer and changed camera resolution.-->
         <a-scene loading-screen="dotsColor: orange; backgroundColor: black" 
         arjs="debugUIEnabled: false" vr-mode-ui="enabled: false"
-        embedded>
+        embedded
+        renderer="logarithmicDepthBuffer: true;"
+        trackingMethod= "best" 
+        arjs="sourceType: webcam; sourceWidth:1280; sourceHeight:960; displayWidth: 1280; displayHeight: 960;">
         
         
         <!-- ASSETS -->
@@ -69,8 +72,7 @@
                 rotation="-90 0 0"
                 position="0 0 1"
                 visible="true"
-                animation-mixer
-                metarial="transparent:false">
+                animation-mixer>
                 </a-entity>
 
                 <!-- IMAGES -->
